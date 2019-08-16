@@ -1,0 +1,8 @@
+<?php $_loggedin = $this->helper('Magento\Checkout\Helper\Cart')->getCart()->getCustomerSession()->isLoggedIn(); ?>
+<?php if( !$_loggedin ) : ?>
+ <li>
+    <a <?php /* @escapeNotVerified */ echo $block->getLinkAttributes(); ?>>
+        <?php echo $block->escapeHtml($block->getLabel()); ?>
+    </a>
+</li>
+<?php endif; ?>
